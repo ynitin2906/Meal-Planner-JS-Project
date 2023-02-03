@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Planner</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <body>
+    <section id="navigation">
+      <img id="logo" src="logo.jpg" />
+      <!-- Meal Planner -->
+      Meal Planner
+    </section>
+    <form id="user-form">
+      <div class="div-form">
+        <input id="height" type="number" placeholder="Enter Height" />
+        <input id="weight" type="number" placeholder="Enter Weight" />
+        <input id="age" type="number" placeholder="Enter Age" />
+      </div>
 
+      <div class="div-form">
+        <select id="gender">
+          <option value="gender" hidden disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <select id="activity">
+          <option value="levels" hidden disabled selected>
+            Activity Level
+          </option>
+          <option value="light">Light</option>
+          <option value="moderate">Moderate</option>
+          <option value="active">Active</option>
+        </select>
+      </div>
+      <div class="div-form">
+        <button id="generate" type="submit">Generate Meals</button>
+      </div>
+    </form>
+
+    <!-- <section id="meal"> -->
+    <section id="meal" style="display: none">
+      <div id="card-headings">
+        <p>BREAKFAST</p>
+        <p>LUNCH</p>
+        <p>DINNER</p>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="logo.jpg"
+            class="images"
+            id="breakfast-image"
+            alt="breakfast"
+          />
+          <div class="container">
+            <h4 class="card-title" id="breakfast-name"><b>Meal 1</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button
+              class="recipe"
+              id="breakfast-button"
+              onclick="breakFastRecipe()"
+            >
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="logo.jpg" class="images" id="lunch-image" alt="lunch" />
+          <div class="container">
+            <h4 class="card-title" id="lunch-name"><b>Meal 2</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button class="recipe" id="lunch-button" onclick="lunchRecipe()">
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="logo.jpg" class="images" id="dinner-image" alt="dinner" />
+          <div class="container">
+            <h4 class="card-title" id="dinner-name"><b>Meal 3</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button class="recipe" id="dinner-button" onclick="dinnerRecipe()">
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="recipeSection"> -->
+    <section id="recipeSection" style="display: none">
+      <div class="tab">
+        <button class="tablinks" onclick="openContent(event, 'ingredients')">
+          <h3>Ingredients</h3>
+        </button>
+        <button class="tablinks" onclick="openContent(event, 'steps')">
+          <h3>Steps</h3>
+        </button>
+        <button class="tablinks" onclick="openContent(event, 'equipment')">
+          <h3>Equipment</h3>
+        </button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="ingredients" class="tabcontent">
+        <ul id="ingredients-list"></ul>
+      </div>
+
+      <div id="steps" class="tabcontent">
+        <ol id="steps-list"></ol>
+      </div>
+
+      <div id="equipment" class="tabcontent">
+        <ul id="equipment-list"></ul>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="App.js"></script>
+  </body>
+</html>
