@@ -59,7 +59,7 @@ function getMealData(calorie) {
       console.log(error);
     });
 }
-
+//-------------------FUNCTION SETTING MEAL DATA IN ALL THREE CARDS-------------------
 function setMealData(data) {
   setBreakfastData(data.meals[0]);
   setLunchData(data.meals[1]);
@@ -102,22 +102,45 @@ function setDinnerData(data) {
   // img.src = `${data.sourceUrl}`;
 }
 
+//-------------------ONCLICK FOR GET RECIPE OF BREAKFAST-------------------
 function breakFastRecipe() {
+  //clear previous data
+  const ingredientsList = document.getElementById("ingredients-list");
+  const stepsList = document.getElementById("steps-list");
+  const equipmentList = document.getElementById("equipment-list");
+  ingredientsList.textContent = "";
+  stepsList.textContent = "";
+  equipmentList.textContent = "";
   dataFetch(breakfastId);
   recipe.style.display = "block";
 }
 
+//-------------------ONCLICK FOR GET RECIPE OF LUNCH-------------------
 function lunchRecipe() {
+  const ingredientsList = document.getElementById("ingredients-list");
+  const stepsList = document.getElementById("steps-list");
+  const equipmentList = document.getElementById("equipment-list");
+  ingredientsList.textContent = "";
+  stepsList.textContent = "";
+  equipmentList.textContent = "";
   dataFetch(lunchId);
   recipe.style.display = "block";
 }
+
+//-------------------ONCLICK FOR GET RECIPE OF DINNER-------------------
 function dinnerRecipe() {
+  const ingredientsList = document.getElementById("ingredients-list");
+  const stepsList = document.getElementById("steps-list");
+  const equipmentList = document.getElementById("equipment-list");
+  ingredientsList.textContent = "";
+  stepsList.textContent = "";
+  equipmentList.textContent = "";
   dataFetch(dinnerId);
   recipe.style.display = "block";
 }
 
 async function dataFetch(idOfMeal) {
-  //FETCH FOR INGREDIENTS
+  //-------------------FETCH FOR INGREDIENTS-------------------
   const response = await fetch(
     `https://api.spoonacular.com/recipes/${idOfMeal}/ingredientWidget.json?apiKey=c10e4445795a4bbbb0d1e26a454b8ce3`
   );
@@ -131,7 +154,7 @@ async function dataFetch(idOfMeal) {
     li.appendChild(document.createTextNode(`${ingredientArray[i].name}`));
   }
 
-  //FETCH FOR STEPS
+  //-------------------FETCH FOR STEPS-------------------
   const response2 = await fetch(
     `https://api.spoonacular.com/recipes/${idOfMeal}/analyzedInstructions?apiKey=c10e4445795a4bbbb0d1e26a454b8ce3`
   );
@@ -145,7 +168,7 @@ async function dataFetch(idOfMeal) {
     li.appendChild(document.createTextNode(`${stepsArray[i].step}`));
   }
 
-  //FETCH FOR EQUIPMENT
+  //-------------------FETCH FOR EQUIPMENT-------------------
   const response3 = await fetch(
     `https://api.spoonacular.com/recipes/${idOfMeal}/equipmentWidget.json?apiKey=c10e4445795a4bbbb0d1e26a454b8ce3`
   );
@@ -160,7 +183,7 @@ async function dataFetch(idOfMeal) {
   }
 }
 
-//---------------RECIPE TAB TOGGLE----------
+//-------------------RECIPE TAB TOGGLE-------------------
 function openContent(evt, contentName) {
   // Declare all variables
   let i, tabcontent, tablinks;
