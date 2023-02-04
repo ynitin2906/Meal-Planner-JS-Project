@@ -1,7 +1,7 @@
 const card = document.getElementById("meal");
 const recipe = document.getElementById("recipeSection");
 const btn = document.getElementById("generate");
-const calories = document.getElementsByClassName("calories");
+const caloriesClass = document.getElementsByClassName("calories");
 
 let calorie, breakfastId, lunchId, dinnerId;
 
@@ -37,14 +37,12 @@ function calorieCal(e) {
     console.log(bmr, calorie);
     //function to fetch meal data for cards
     getMealData(calorie);
-    // card.style.display = "block";
 
     setTimeout(() => {
       card.style.display = "block";
     }, 1000);
   }
 }
-//c10e4445795a4bbbb0d1e26a454b8ce3
 
 function getMealData(calorie) {
   fetch(
@@ -54,6 +52,9 @@ function getMealData(calorie) {
     .then((data) => {
       console.log(data);
       setMealData(data);
+      caloriesClass[0].textContent = data.nutrients.calories;
+      caloriesClass[1].textContent = data.nutrients.calories;
+      caloriesClass[2].textContent = data.nutrients.calories;
     })
     .catch((error) => {
       console.log(error);
