@@ -12,6 +12,12 @@
     href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap"
     rel="stylesheet"
   />
+  <!-- <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  /> -->
   <link rel="stylesheet" href="styles.css" />
   <body>
     <section id="navigation">
@@ -21,8 +27,8 @@
     </section>
     <form id="user-form">
       <div class="div-form">
-        <input id="height" type="number" placeholder="Enter Height" />
-        <input id="weight" type="number" placeholder="Enter Weight" />
+        <input id="height" type="number" placeholder="Enter Height (in cm)" />
+        <input id="weight" type="number" placeholder="Enter Weight (in kg)" />
         <input id="age" type="number" placeholder="Enter Age" />
       </div>
 
@@ -55,6 +61,7 @@
         <p>DINNER</p>
       </div>
 
+      <p class="alterHeading">BREAKFAST</p>
       <div class="column">
         <div class="card">
           <img
@@ -76,7 +83,7 @@
           </div>
         </div>
       </div>
-
+      <p class="alterHeading">LUNCH</p>
       <div class="column">
         <div class="card">
           <img src="logo.jpg" class="images" id="lunch-image" alt="lunch" />
@@ -90,6 +97,7 @@
         </div>
       </div>
 
+      <p class="alterHeading">DINNER</p>
       <div class="column">
         <div class="card">
           <img src="logo.jpg" class="images" id="dinner-image" alt="dinner" />
@@ -131,6 +139,91 @@
         <ul id="equipment-list"></ul>
       </div>
     </section>
+    <!-- ---------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------------------------------- -->
+
+    <!-- <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Accordion Item #1
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is
+            shown by default, until the collapse plugin adds the appropriate
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #2
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Accordion Item #3
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script> -->
 
     <script type="text/javascript" src="App.js"></script>
   </body>

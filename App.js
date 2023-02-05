@@ -60,7 +60,7 @@ function getMealData(calorie) {
       console.log(error);
     });
 }
-//-------------------FUNCTION SETTING MEAL DATA IN ALL THREE CARDS-------------------
+//-------------------FUNCTION SETTING MEAL DATA IN ALL THREE CARDS--------------------
 function setMealData(data) {
   setBreakfastData(data.meals[0]);
   setLunchData(data.meals[1]);

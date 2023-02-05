@@ -149,11 +149,12 @@ select {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  column-gap: 33.33%;
+  column-gap: 11%;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
+  width: 33.33%;
   background-color: inherit;
   float: left;
   border: none;
@@ -201,4 +202,51 @@ input::-webkit-inner-spin-button {
 
 select {
   -webkit-appearance: none;
+}
+.alterHeading {
+  display: none;
+}
+
+/* .accordion {
+  background-color: rgba(128, 128, 128, 0.215);
+  margin: 2% 5%;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+} */
+@media screen and (max-width: 673px) {
+  #card-headings {
+    display: none;
+  }
+  .alterHeading {
+    display: block;
+    margin: auto;
+    width: 11.5%;
+    padding-top: 10px;
+    padding-top: 10px;
+    color: rgba(255, 47, 0, 0.71);
+  }
+  .column {
+    display: flex;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width: 500px;
+  }
+  .div-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+  input {
+    width: 200px;
+    margin: 5px;
+  }
+  select {
+    width: 200px;
+    margin: 5px;
+  }
 }
