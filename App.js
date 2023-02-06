@@ -59,6 +59,7 @@ function getMealData(calorie) {
     .catch((error) => {
       console.log(error);
     });
+  currentRecipe = "";
 }
 //-------------------FUNCTION SETTING MEAL DATA IN ALL THREE CARDS--------------------
 function setMealData(data) {
@@ -102,42 +103,55 @@ function setDinnerData(data) {
     data.imageType;
   // img.src = `${data.sourceUrl}`;
 }
+let currentRecipe = "";
+const BREAKFAST = "breakfast";
+const LUNCH = "lunch";
+const DINNER = "dinner";
 
 //-------------------ONCLICK FOR GET RECIPE OF BREAKFAST-------------------
 function breakFastRecipe() {
   //clear previous data
-  const ingredientsList = document.getElementById("ingredients-list");
-  const stepsList = document.getElementById("steps-list");
-  const equipmentList = document.getElementById("equipment-list");
-  ingredientsList.textContent = "";
-  stepsList.textContent = "";
-  equipmentList.textContent = "";
-  dataFetch(breakfastId);
-  recipe.style.display = "block";
+  if (currentRecipe != BREAKFAST) {
+    currentRecipe = BREAKFAST;
+    const ingredientsList = document.getElementById("ingredients-list");
+    const stepsList = document.getElementById("steps-list");
+    const equipmentList = document.getElementById("equipment-list");
+    ingredientsList.textContent = "";
+    stepsList.textContent = "";
+    equipmentList.textContent = "";
+    dataFetch(breakfastId);
+    recipe.style.display = "block";
+  }
 }
 
 //-------------------ONCLICK FOR GET RECIPE OF LUNCH-------------------
 function lunchRecipe() {
-  const ingredientsList = document.getElementById("ingredients-list");
-  const stepsList = document.getElementById("steps-list");
-  const equipmentList = document.getElementById("equipment-list");
-  ingredientsList.textContent = "";
-  stepsList.textContent = "";
-  equipmentList.textContent = "";
-  dataFetch(lunchId);
-  recipe.style.display = "block";
+  if (currentRecipe != LUNCH) {
+    currentRecipe = LUNCH;
+    const ingredientsList = document.getElementById("ingredients-list");
+    const stepsList = document.getElementById("steps-list");
+    const equipmentList = document.getElementById("equipment-list");
+    ingredientsList.textContent = "";
+    stepsList.textContent = "";
+    equipmentList.textContent = "";
+    dataFetch(lunchId);
+    recipe.style.display = "block";
+  }
 }
 
 //-------------------ONCLICK FOR GET RECIPE OF DINNER-------------------
 function dinnerRecipe() {
-  const ingredientsList = document.getElementById("ingredients-list");
-  const stepsList = document.getElementById("steps-list");
-  const equipmentList = document.getElementById("equipment-list");
-  ingredientsList.textContent = "";
-  stepsList.textContent = "";
-  equipmentList.textContent = "";
-  dataFetch(dinnerId);
-  recipe.style.display = "block";
+  if (currentRecipe != DINNER) {
+    currentRecipe = DINNER;
+    const ingredientsList = document.getElementById("ingredients-list");
+    const stepsList = document.getElementById("steps-list");
+    const equipmentList = document.getElementById("equipment-list");
+    ingredientsList.textContent = "";
+    stepsList.textContent = "";
+    equipmentList.textContent = "";
+    dataFetch(dinnerId);
+    recipe.style.display = "block";
+  }
 }
 
 async function dataFetch(idOfMeal) {
