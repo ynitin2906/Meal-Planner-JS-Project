@@ -121,6 +121,9 @@ function breakFastRecipe() {
     equipmentList.textContent = "";
     dataFetch(breakfastId);
     recipe.style.display = "block";
+    document.getElementById("ingredients").style.display = "block";
+    document.getElementById("steps").style.display = "none";
+    document.getElementById("equipment").style.display = "none";
   }
 }
 
@@ -136,6 +139,9 @@ function lunchRecipe() {
     equipmentList.textContent = "";
     dataFetch(lunchId);
     recipe.style.display = "block";
+    document.getElementById("ingredients").style.display = "block";
+    document.getElementById("steps").style.display = "none";
+    document.getElementById("equipment").style.display = "none";
   }
 }
 
@@ -151,6 +157,9 @@ function dinnerRecipe() {
     equipmentList.textContent = "";
     dataFetch(dinnerId);
     recipe.style.display = "block";
+    document.getElementById("ingredients").style.display = "block";
+    document.getElementById("steps").style.display = "none";
+    document.getElementById("equipment").style.display = "none";
   }
 }
 
