@@ -221,12 +221,12 @@ ul {
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
+/* .tab button.active {
   color: rgb(4, 34, 232);
   font-size: 1.3rem;
   text-decoration: underline;
 }
-
+ */
 /* Style the tab content */
 .tabcontent li {
   margin-bottom: 12px;
