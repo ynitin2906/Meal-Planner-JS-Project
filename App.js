@@ -35,6 +35,8 @@ function calorieCal(e) {
       return;
     }
     console.log(bmr, calorie);
+
+    document.getElementById("recipeSection").style.display = "none";
     //function to fetch meal data for cards
     getMealData(calorie);
 
