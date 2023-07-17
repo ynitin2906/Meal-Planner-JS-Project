@@ -2,6 +2,9 @@ const card = document.getElementById("meal");
 const recipe = document.getElementById("recipeSection");
 const btn = document.getElementById("generate");
 const caloriesClass = document.getElementsByClassName("calories");
+const breakfastTime = document.getElementById("breakfast-time");
+const LunchTime = document.getElementById("lunch-time");
+const DinnerTime = document.getElementById("dinner-time");
 
 let calorie, breakfastId, lunchId, dinnerId;
 
@@ -15,6 +18,50 @@ function calorieCal(e) {
   const age = document.getElementById("age").value;
   const activity = document.getElementById("activity").value;
   const gender = document.getElementById("gender").value;
+
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((errorMsg) => (errorMsg.textContent = ""));
+
+  // Validations
+  let isValid = true;
+  if (isNaN(height) || height <= 30 || height >= 280) {
+    document.getElementById("height-error").textContent =
+      "Height should be between 30 cm and 280 cm.";
+    isValid = false;
+  }
+
+  if (isNaN(weight) || weight <= 0 || weight >= 500) {
+    document.getElementById("weight-error").textContent =
+      "Weight should be between 0 kg and 500 kg.";
+    isValid = false;
+  }
+
+  if (isNaN(age) || age <= 0 || age >= 100) {
+    document.getElementById("age-error").textContent =
+      "Age should be between 1 and 99.";
+    isValid = false;
+  }
+
+  if (!gender || !activity) {
+    document.getElementById("gender-error").textContent =
+      "Please select both gender and activity level.";
+    isValid = false;
+  }
+  if (gender === "gender") {
+    document.getElementById("gender-error").textContent =
+      "Please select a gender.";
+    isValid = false;
+  }
+
+  if (activity === "levels") {
+    document.getElementById("activity-error").textContent =
+      "Please select an activity level.";
+    isValid = false;
+  }
+
+  if (!isValid) {
+    return;
+  }
 
   if (height != "" || weight != "" || age != "") {
     if (gender === "male") {
@@ -31,6 +78,8 @@ function calorieCal(e) {
       calorie = bmr * 1.55;
     } else if (activity === "active") {
       calorie = bmr * 1.725;
+    } else if (activity === "extreme") {
+      calorie = bmr * 1.95;
     } else {
       return;
     }
@@ -80,6 +129,7 @@ function setBreakfastData(data) {
     "-556x370." +
     data.imageType;
   // img.src = `${data.sourceUrl}`;
+  breakfastTime.textContent = data.readyInMinutes;
 }
 
 function setLunchData(data) {
@@ -92,6 +142,7 @@ function setLunchData(data) {
     "-556x370." +
     data.imageType;
   // img.src = `${data.sourceUrl}`;
+  LunchTime.textContent = data.readyInMinutes;
 }
 
 function setDinnerData(data) {
@@ -104,6 +155,7 @@ function setDinnerData(data) {
     "-556x370." +
     data.imageType;
   // img.src = `${data.sourceUrl}`;
+  DinnerTime.textContent = data.readyInMinutes;
 }
 let currentRecipe = "";
 const BREAKFAST = "breakfast";
